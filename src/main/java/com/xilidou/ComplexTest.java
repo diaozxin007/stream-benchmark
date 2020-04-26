@@ -45,7 +45,7 @@ public class ComplexTest {
     @Setup
     public void warmUp(){
         objects = createData();
-        BigObject bigObject = minFor();
+        Map<String, Double> bigObject = minFor();
         Map<String, Double> stringDoubleMap1 = minStream();
         Map<String, Double> stringDoubleMap = minParallelStream();
 
@@ -53,7 +53,7 @@ public class ComplexTest {
     }
 
     @Benchmark
-    public BigObject minFor(){
+    public Map<String,Double> minFor(){
         Map<String, Double> map = new HashMap<>();
         Map<String,Integer> countMap = new HashMap<>();
         Map<String,Integer> sumMap = new HashMap<>();

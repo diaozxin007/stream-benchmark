@@ -58,8 +58,6 @@ public class ComplexTest {
         Map<String,Integer> countMap = new HashMap<>();
         Map<String,Integer> sumMap = new HashMap<>();
 
-        BigObject result = null;
-
         for (BigObject object : objects) {
 
             String key = object.getAddress().getCity();
@@ -84,7 +82,7 @@ public class ComplexTest {
 
         }
 
-        return result;
+        return map;
     }
 
     @Benchmark

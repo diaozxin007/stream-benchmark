@@ -48,8 +48,46 @@ public class ComplexTest {
         Map<String, Double> bigObject = minFor();
         Map<String, Double> stringDoubleMap1 = minStream();
         Map<String, Double> stringDoubleMap = minParallelStream();
+        Map<String, Double> stringDoubleMap2 = minFor2();
 
 
+    }
+
+    @Benchmark
+    public Map<String,Double> minFor2(){
+        Map<String, Double> map = new HashMap<>();
+        Map<String,CounterObject> counterMap = new HashMap<>();
+
+        for (BigObject object : objects) {
+            String key = object.getAddress().getCity();
+            CounterObject counterObject = counterMap.get(key);
+            if(counterObject == null){
+                counterObject = new CounterObject();
+                counterObject.setCount(1);
+                counterObject.setSum(object.getAge());
+                counterMap.put(key, counterObject);
+            }
+            else {
+                int count = counterObject.getCount();
+                count += 1;
+                counterObject.setCount(count);
+                int sum = counterObject.getSum();
+                sum += object.getAge();
+                counterObject.setSum(sum);
+            }
+        }
+
+        for (Map.Entry<String, CounterObject> entry : counterMap.entrySet()) {
+
+            String key = entry.getKey();
+            CounterObject value = entry.getValue();
+            Double avg = (double) value.getSum() /value.getCount();
+
+            map.put(key, avg);
+
+        }
+
+        return map;
     }
 
     @Benchmark

@@ -37,3 +37,20 @@ ComplexTest.minStream             10000  avgt    2   0.178          ms/op
 ComplexTest.minStream            100000  avgt    2   4.534          ms/op
 ComplexTest.minStream           1000000  avgt    2  47.878          ms/op
 ```
+
+add for2 
+```
+Benchmark                      (length)  Mode  Cnt   Score   Error  Units
+ComplexTest.minFor                10000  avgt    2   0.348          ms/op
+ComplexTest.minFor               100000  avgt    2   7.464          ms/op
+ComplexTest.minFor              1000000  avgt    2  89.096          ms/op
+ComplexTest.minFor2               10000  avgt    2   0.152          ms/op
+ComplexTest.minFor2              100000  avgt    2   3.178          ms/op
+ComplexTest.minFor2             1000000  avgt    2  38.346          ms/op
+ComplexTest.minParallelStream     10000  avgt    2   0.064          ms/op
+ComplexTest.minParallelStream    100000  avgt    2   0.994          ms/op
+ComplexTest.minParallelStream   1000000  avgt    2  10.020          ms/op
+ComplexTest.minStream             10000  avgt    2   0.172          ms/op
+ComplexTest.minStream            100000  avgt    2   3.609          ms/op
+ComplexTest.minStream           1000000  avgt    2  45.379          ms/op
+```

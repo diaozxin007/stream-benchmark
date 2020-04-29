@@ -114,7 +114,7 @@ public class ComplexTest {
 
             String key = stringIntegerEntry.getKey();
 
-            Double avg = Double.valueOf( sumMap.get(key))/ countMap.get(key);
+            Double avg = (double) sumMap.get(key) / countMap.get(key);
 
             map.put(key, avg);
 
